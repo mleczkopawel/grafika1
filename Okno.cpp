@@ -27,8 +27,8 @@ Okno::~Okno() {
 void Okno::stworzenieOkna(int argc, char **argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-    glutInitWindowSize(768, 1024);
-    glutInitWindowPosition(100, 100);
+    glutInitWindowSize(this->szerokoscOkna, this->wysokoscOkna);
+    glutInitWindowPosition(this->polozenieOknaX, this->polozenieOknaY);
     glutCreateWindow("okno1");
 }
 
@@ -36,4 +36,5 @@ void Okno::wyswietl() {
     glClear(GL_COLOR_BUFFER_BIT);
     glutSwapBuffers();
     glutShowWindow();
+    glutMainLoop();
 }
